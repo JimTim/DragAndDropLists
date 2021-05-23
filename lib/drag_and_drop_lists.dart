@@ -221,6 +221,9 @@ class DragAndDropLists extends StatefulWidget {
   /// The padding between each individual list.
   final EdgeInsets? listPadding;
 
+  /// The ScrollPhysics of DragAndDropLists
+  final ScrollPhysics listsPhysics;
+
   /// A widget that will be displayed whenever a list contains no items.
   final Widget? contentsWhenEmpty;
 
@@ -316,6 +319,7 @@ class DragAndDropLists extends StatefulWidget {
     this.listDivider,
     this.listDividerOnLastChild = true,
     this.listPadding,
+    this.listsPhysics,
     this.contentsWhenEmpty,
     this.listWidth = double.infinity,
     this.lastItemTargetHeight = 20,
@@ -490,6 +494,7 @@ class DragAndDropListsState extends State<DragAndDropLists> {
     return ListView(
       scrollDirection: widget.axis,
       controller: _scrollController,
+      physics: widget.listsPhysics ?? AlwaysScrollableScrollPhysics(),
       children: _buildOuterList(dragAndDropListTarget, parameters),
     );
   }
