@@ -222,7 +222,7 @@ class DragAndDropLists extends StatefulWidget {
   final EdgeInsets? listPadding;
 
   /// The ScrollPhysics of DragAndDropLists
-  final ScrollPhysics listsPhysics;
+  final ScrollPhysics? listsPhysics;
 
   /// A widget that will be displayed whenever a list contains no items.
   final Widget? contentsWhenEmpty;
